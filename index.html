@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas - Projeto Final Javascript DNC</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./index.js"></script>  
+</head>
+<body>
+    <main>
+        <h1>Lista de Tarefas</h1>
+        <section id="create-todo-section">
+            <form id="create-todo-form">
+                <input 
+                    type="text" 
+                    id="description" 
+                    name="description"
+                    class="input-description"
+                    aria-label="Qual tarefa deseja cadastrar?"
+                    placeholder="Qual tarefa deseja cadastrar?"
+                />
+                <button type="submit" id="save-task" aria-label="Cadastrar Tarefa" class="add-task-btn">+</button>
+            </form>
+        </section>
+        <section class="todo-list-section">
+            <ul id="todo-list"></ul>
+        </section>
+        <footer id="todo-footer">
+            <button onclick="removeDoneTasks()" class="remove-done-tasks-btn">
+                Remover tarefas concluídas
+            </button>
+        </footer>
+    </main>
+</body>
+</html>
