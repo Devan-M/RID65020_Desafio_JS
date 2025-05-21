@@ -5,20 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de tarefas - Projeto Final Javascript DNC</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <script src="./index.js"></script>  
 </head>
 <body>
     <main>
-        <h1>Lista de Tarefas</h1>
+        <h1>Board de tarefas</h1>
         <section id="create-todo-section">
             <form id="create-todo-form">
                 <input 
                     type="text" 
-                    id="description" 
-                    name="description"
-                    class="input-description"
-                    aria-label="Qual tarefa deseja cadastrar?"
-                    placeholder="Qual tarefa deseja cadastrar?"
+                    id="task-field" 
+                    name="task-field"
+                    class="input-task-field"
+                    aria-label="Nome da tarefa"
+                    placeholder="Nome da tarefa"
+                />
+                <input 
+                    type="text" 
+                    id="tag-field" 
+                    name="tag-field"
+                    class="input-tag-field"
+                    aria-label="Etiqueta"
+                    placeholder="Etiqueta"
                 />
                 <button type="submit" id="save-task" aria-label="Cadastrar Tarefa" class="add-task-btn">+</button>
             </form>
