@@ -1,10 +1,141 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #F4F6F8;
+    color: #2C3E50;
+    padding: 20px;
 }
 
-body {
-  font-family: 'Rubik', sans-serif;
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 24px;
+    color: #34495E;
+}
+
+#create-todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-task-field,
+.input-tag-field {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #DADADA;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #FAFAFA;
+}
+
+.add-task-btn {
+    background-color: #27AE60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-task-btn:hover {
+    background-color: #219150;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F0F4F8;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    transition: 0.3s ease;
+}
+
+.todo-item.done {
+    background-color: #E0F7EF;
+    opacity: 0.8;
+    text-decoration: line-through;
+}
+
+.task-name {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.task-tag {
+    font-size: 0.85rem;
+    color: #7B8A9B;
+    margin-left: 10px;
+}
+
+.mark-done-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 10s ease;
+}
+
+.todo-item.done .mark-done-btn {
+    background-color: #2ECC71;
+}
+
+.mark-done-btn:hover {
+    background-color: #2980B9;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+}
+
+.checked-icon {
+    background-color: #2ECC71;
+    color: white;
+    border-radius: 60%;
+    padding: 6px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checked-btn {
+    width: 40px;
+    height: 40px;
+    background-color: #2ECC71;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    transition: background-color 0.3s;
+}
+
+.checked-btn .icon {
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+
