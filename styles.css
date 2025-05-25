@@ -158,6 +158,7 @@ h1 {
 
     .add-task-btn {
         width: 100%;
+        padding: 0.625rem 0.625rem 0.625rem 0.625rem;
     }
 
     .todo-item {

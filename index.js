@@ -6,6 +6,17 @@ const doneCounter = document.getElementById('done-counter');
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
+// Adiciona tarefas iniciais se for a primeira execução (localStorage vazio)
+if (tasks.length === 0) {
+    const hoje = new Date().toLocaleDateString('pt-BR');
+    tasks = [
+        { name: 'Implementar tela de listagem de tarefas', tag: 'frontend', date: '21/08/2024', done: false },
+        { name: 'Criar endpoint para cadastro de tarefas', tag: 'backend', date: '21/08/2024', done: false },
+        { name: 'Implementar protótipo da listagem de tarefas', tag: 'ux', date: '21/08/2024', done: true }
+    ];
+    saveTasks(); // salva no localStorage
+}
+
 function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
