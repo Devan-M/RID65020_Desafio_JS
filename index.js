@@ -1,18 +1,20 @@
-// Seleciona os elementos do DOM
 const todoForm = document.getElementById('create-todo-form');
 const taskField = document.getElementById('task-field');
 const tagField = document.getElementById('tag-field');
 const todoList = document.getElementById('todo-list');
+const doneCounter = document.getElementById('done-counter');
 
-// Lista de tarefas
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-// Salva as tarefas no localStorage
 function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// Renderiza as tarefas na tela
+function updateDoneCounter() {
+    const doneCount = tasks.filter(task => task.done).length;
+    doneCounter.textContent = `${doneCount} tarefa${doneCount !== 1 ? 's' : ''} concluída${doneCount !== 1 ? 's' : ''}.`;
+}
+
 function renderTasks() {
     todoList.innerHTML = '';
 
@@ -22,9 +24,12 @@ function renderTasks() {
         if (task.done) li.classList.add('done');
 
         li.innerHTML = `
-            <div class="task-info">
+            <div class="task-text-group">
                 <span class="task-name">${task.name}</span>
-                <span class="task-tag">#${task.tag}</span>
+                <div class="task-meta">
+                    <span class="task-tag">${task.tag || 'sem-etiqueta'}</span>
+                    <span class="task-date">Criado em: ${task.date}</span>
+                </div>
             </div>
             ${
                 task.done
@@ -37,8 +42,7 @@ function renderTasks() {
             }
         `;
 
-        const btn = li.querySelector('.toggle-task-btn');
-        btn.addEventListener('click', () => {
+        li.querySelector('.toggle-task-btn').addEventListener('click', () => {
             tasks[index].done = !tasks[index].done;
             saveTasks();
             renderTasks();
@@ -47,20 +51,20 @@ function renderTasks() {
         todoList.appendChild(li);
     });
 
-    // Renderiza ícones (Lucide)
+    updateDoneCounter();
     if (window.lucide) lucide.createIcons();
 }
 
-// Adiciona nova tarefa
 todoForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const name = taskField.value.trim();
     const tag = tagField.value.trim();
+    const date = new Date().toLocaleDateString('pt-BR');
 
     if (name === '') return;
 
-    tasks.push({ name, tag, done: false });
+    tasks.push({ name, tag, date, done: false });
     saveTasks();
     renderTasks();
 
@@ -68,12 +72,4 @@ todoForm.addEventListener('submit', (event) => {
     tagField.value = '';
 });
 
-// Remove tarefas concluídas
-function removeDoneTasks() {
-    tasks = tasks.filter(task => !task.done);
-    saveTasks();
-    renderTasks();
-}
-
-// Inicializa a renderização
 renderTasks();

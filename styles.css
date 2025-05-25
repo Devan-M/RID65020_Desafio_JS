@@ -55,8 +55,8 @@ h1 {
 .todo-item {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #F0F4F8;
+    align-items: flex-start;
+    background-color: #FFFFFF;
     padding: 14px 18px;
     border-radius: 10px;
     margin-bottom: 12px;
@@ -64,73 +64,61 @@ h1 {
 }
 
 .todo-item.done {
-    background-color: #E0F7EF;
-    opacity: 0.8;
+    opacity: 0.5;
     text-decoration: line-through;
+}
+
+.task-text-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 0px;
 }
 
 .task-name {
     font-weight: 500;
     font-size: 1rem;
+    margin-bottom: 6px;
+    color: #2C3E50;
+}
+
+.task-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 0.85rem;
+    color: #7B8A9B;
 }
 
 .task-tag {
-    font-size: 0.85rem;
     color: #7B8A9B;
-    margin-left: 10px;
+    border: 1px solid;
+    border-radius: 5rem;
+    padding-left: .4rem;
+    padding-right: .4rem;
 }
 
-.mark-done-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    background-color: #3498DB;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: background-color 10s ease;
+.task-date {
+    font-style: italic;
 }
 
-.todo-item.done .mark-done-btn {
-    background-color: #2ECC71;
-}
-
-.mark-done-btn:hover {
-    background-color: #2980B9;
-}
-
-.icon {
-    width: 18px;
-    height: 18px;
-}
-
-.checked-icon {
-    background-color: #2ECC71;
-    color: white;
-    border-radius: 60%;
-    padding: 6px;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.mark-done-btn,
+.checked-btn {
+    flex-shrink: 0;
+    background-color: #2D70FD;
+    color: #FFFFFF;
+    border-radius: .4rem;
 }
 
 .checked-btn {
     width: 40px;
     height: 40px;
-    background-color: #2ECC71;
+    background-color: #00D8A7;
     border: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: default;
-    transition: background-color 0.3s;
 }
 
 .checked-btn .icon {
@@ -139,3 +127,9 @@ h1 {
     color: white;
 }
 
+#todo-footer {
+    margin-top: 24px;
+    text-align: right;
+    font-size: 0.95rem;
+    color: #B1BACB;
+}
