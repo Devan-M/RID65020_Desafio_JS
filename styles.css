@@ -72,12 +72,8 @@ h1 {
     transition: 0.3s ease;
 }
 
-.todo-item.done {
-    opacity: 0.5;
-    border: 1px solid #EEEEEE;
-    border-radius: 10px;
-    margin-bottom: 12px;
-   
+.todo-item.done .task-text-group {
+    opacity: 0.5;   
 }
 
 .todo-item.done .task-name {
@@ -153,5 +149,30 @@ h1 {
     font-size: 0.95rem;
     color: #B1BACB;
     border-top: 1px solid #EEEEEE;
-    
+}
+
+@media (max-width: 600px) {
+    #create-todo-form {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .add-task-btn {
+        width: 100%;
+    }
+
+    .todo-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .task-meta {
+        flex-wrap: wrap;
+    }
+
+    .mark-done-btn,
+    .checked-btn {
+        align-self: center;
+    }
 }

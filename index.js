@@ -12,7 +12,7 @@ function saveTasks() {
 
 function updateDoneCounter() {
     const doneCount = tasks.filter(task => task.done).length;
-    doneCounter.textContent = `${doneCount} tarefa${doneCount !== 1 ? 's' : ''} concluída${doneCount !== 1 ? 's' : ''}.`;
+    doneCounter.textContent = `${doneCount} tarefa${doneCount !== 1 ? 's' : ''} concluída${doneCount !== 1 ? 's' : ''}`;
 }
 
 function renderTasks() {
