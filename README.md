@@ -15,7 +15,9 @@ Este é um projeto de lista de tarefas (To-Do List) desenvolvido como parte do p
 
 📁 projeto/
 ├── index.html # Estrutura da página
+
 ├── styles.css # Estilos visuais (CSS)
+
 ├── index.js # Lógica da aplicação (JavaScript)
 
 
