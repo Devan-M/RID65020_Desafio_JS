@@ -10,15 +10,17 @@ main {
     margin: 0 auto;
     background-color: #FFFFFF;
     padding: 32px;
+    border: 1px solid;
     border-radius: 12px;
+    border-color: #F5F9FF;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
-    text-align: center;
+    text-align: left;
     font-size: 2rem;
     margin-bottom: 24px;
-    color: #34495E;
+    color: #11175E;
 }
 
 #create-todo-form {
@@ -31,10 +33,12 @@ h1 {
 .input-tag-field {
     flex: 1;
     padding: 12px;
-    border: 1px solid #DADADA;
+    border: 1px solid #EEEEEE;
     border-radius: 8px;
     font-size: 1rem;
-    background-color: #FAFAFA;
+}
+::placeholder{
+    color: #B1BACB;
 }
 
 .add-task-btn {
@@ -52,12 +56,17 @@ h1 {
     background-color: #5a8af2;
 }
 
+#todo-list{
+    padding-left: 0;
+}
+
 .todo-item {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     background-color: #FFFFFF;
     padding: 14px 18px;
+    border: 1px solid #EEEEEE;
     border-radius: 10px;
     margin-bottom: 12px;
     transition: 0.3s ease;
@@ -65,8 +74,16 @@ h1 {
 
 .todo-item.done {
     opacity: 0.5;
-    text-decoration: line-through;
+    border: 1px solid #EEEEEE;
+    border-radius: 10px;
+    margin-bottom: 12px;
+   
 }
+
+.todo-item.done .task-name {
+     text-decoration: line-through;
+}
+
 
 .task-text-group {
     display: flex;
@@ -103,10 +120,13 @@ h1 {
 
 .mark-done-btn,
 .checked-btn {
-    flex-shrink: 0;
+    flex-shrink: 1;
     background-color: #2D70FD;
     color: #FFFFFF;
+    font-size: 1.2rem;
     border-radius: .4rem;
+    border: none;
+    padding: .625rem 0.625rem .625rem 0.625rem ;
 }
 
 .checked-btn {
@@ -132,4 +152,6 @@ h1 {
     text-align: right;
     font-size: 0.95rem;
     color: #B1BACB;
+    border-top: 1px solid #EEEEEE;
+    
 }
