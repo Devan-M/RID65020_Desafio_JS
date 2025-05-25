@@ -114,15 +114,14 @@ h1 {
     font-style: italic;
 }
 
-.mark-done-btn,
-.checked-btn {
+.mark-done-btn {
     flex-shrink: 1;
     background-color: #2D70FD;
     color: #FFFFFF;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     border-radius: .4rem;
     border: none;
-    padding: .625rem 0.625rem .625rem 0.625rem ;
+    padding: 0.625rem 1.625rem .625rem 1.625rem ;
 }
 
 .checked-btn {
